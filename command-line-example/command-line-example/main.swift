@@ -7,69 +7,48 @@
 //
 
 import Foundation
+let answer:Int = 0 // The variable to hold the correct answer depending on the random number
+let choice:Int = 0 // The variable to hold the user input
+var level = Int(readLine(stripNewline: true)) // The variable to hold the level the user selects
+var difficulty:UInt32 = 0
 
-// Print welcome message on it's own line
-print("Welcome.")
+let random1 = Int(arc4random_uniform(difficulty))
+let random2 = Int(arc4random_uniform(difficulty))
 
+// Level system (Easy, Medium, Hard)
 
-// Print prompt (but don't go to new line)
-print("What is your name? ", terminator: "")
-
-// Get the user's name
-var givenName = readLine(stripNewline: true)
-
-// Say hello, so long as some input was provided
-// Add an extra newline at the start     \n
-if let name = givenName {
-    print("\nNice to meet you, \(name)!")
+if level == 1 {
+    difficulty = 10
+} else if level == 2 {
+    difficulty == 50
+} else if level == 3 {
+    difficulty == 100
+} else {
+    print("Error! That is not a valid choice")
 }
 
-
-// Ask about food preferences
-var validInput : Bool          // Status of input
-repeat {
-    
-    // Show prompts
-    print("\nWhat is your favourite food category?")
-    print("A - Cereal")
-    print("B - Fruit")
-    print("C - Vegetables")
-    print("Select your favourite (A/B/C/Quit): ", terminator: "")
-    
-    // Get the user's input
-    var givenFoodPreference = readLine(stripNewline: true)
-    
-    // Assume valid input
-    validInput = true
-    
-    // Interpret the result, if one was given
-    if let foodPreference = givenFoodPreference {
-        
-        // Add a blank line to separate response from input block
-        print("")
-        
-        switch foodPreference {
-            
-        case "A", "a":
-            print("Awesome, I love Cheerios!")
-            
-        case "B", "b":
-            print("My favourite it mango.")
-            
-        case "C", "c":
-            print("Have you tried baked eggplant? Delectable!")
-            
-        case "Quit", "QUIT", "quit":
-            print("Bye.")
-            
-        default:
-            print("Sorry, I didn't get that.")
-            validInput = false
-        }
-        
+if choice == 1 { // if user selects addition, do this
+    if answer == (random1+random2) {
+        print ("correct!")
+    } else {
+        print ("try again!")
     }
-    
-} while validInput == false
-
-// Print one additional blank line to separate from exit code message that is automatically displayed
-print("")
+} else if choice == 2 { // if user selects subtraction, do this
+    if answer == (random1-random2) {
+        print ("correct!")
+    } else {
+        print ("try again!")
+    }
+} else if choice == 3 { // if user selects multiplication, do this
+    if answer == (random1*random2) {
+        print ("correct!")
+    } else {
+        print ("try again")
+    }
+} else if choice == 4 { // if user selects division do this
+    if answer == (random1/random2) {
+        print ("correct!")
+    } else {
+        print ("try again")
+    }
+}
