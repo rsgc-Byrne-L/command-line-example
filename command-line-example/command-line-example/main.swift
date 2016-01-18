@@ -14,7 +14,7 @@ var k:Int = 0
 var factors : [Int] = []
 var start:Int = 0
 
-while start == 0 {
+while start == 0 { // Loops around the whole code for restart
 
 print ("Welcome to Liam's Math Flash Cards!")
 print ("Please select an operator!")
@@ -24,7 +24,7 @@ print ("3. *")
 print ("4. /")
 print ("Select a number! (1, 2, 3, or 4)")
 
-let choice = Int(readLine(stripNewline: true)!)!
+let choice = Int(readLine(stripNewline: true)!)! // declares an integer called choice, and takes user input (integer only) and stores it in choice
 
 if choice == 1 {
     print("You have selected addition!")
@@ -66,8 +66,8 @@ if level == 1 {
     print("Error! That is not a valid level!")
 }
 
-let random1 = Int(arc4random_uniform(difficulty))
-let random2 = Int(arc4random_uniform(difficulty))
+let random1 = Int(arc4random_uniform(difficulty)) // Declares a variable called random1, roduces a random number depending on difficulty and stores it in random1
+let random2 = Int(arc4random_uniform(difficulty)) // Declares a variable called random2, produces a random number depending on difficulty and stores it in random2
 
 if choice == 1 { // if user selects addition, do this
     print("What is \(random1) + \(random2)?")
@@ -76,7 +76,7 @@ if choice == 1 { // if user selects addition, do this
         print ("Correct!")
         sleep(1)
     } else {
-        print ("Try again! The correct answer was \(random1+random2)!")
+        print ("Try again! The correct answer was \(random1+random2)!") // Shows user the correct answer if they got it wrong.
         sleep(1)
     }
 } else if choice == 2 { // if user selects subtraction, do this
@@ -86,7 +86,7 @@ if choice == 1 { // if user selects addition, do this
         print ("Correct!")
         sleep(1)
     } else {
-        print ("Try again! The correct answer was \(random1-random2)!")
+        print ("Try again! The correct answer was \(random1-random2)!") // Shows user the correct answer if they got it wrong.
         sleep(1)
     }
 } else if choice == 3 { // if user selects multiplication, do this
@@ -96,7 +96,7 @@ if choice == 1 { // if user selects addition, do this
         print ("Correct!")
         sleep(1)
     } else {
-        print ("Try again! The correct answer was \(random1*random2)!")
+        print ("Try again! The correct answer was \(random1*random2)!") // Shows user the correct answer if they got it wrong.
         sleep(1)
     }
 } else if choice == 4 { // if user selects division do this
@@ -121,14 +121,14 @@ if choice == 1 { // if user selects addition, do this
         print ("Correct!")
         sleep(1)
     } else {
-        print ("Try again! The correct answer was \(random1/2)!")
+        print ("Try again! The correct answer was \(random1/2)!") // Shows user the correct answer if they got it wrong.
         sleep(1)
     }
 }  else {
     print ("Error! That is not a valid operator!")
 }
 
-print("Would you like another try?")
+print("Would you like another try?") // Asks user if they want to restart at the beggining, or just exit
 sleep(1)
 print ("Please select an option!")
 print ("1. Yes")
